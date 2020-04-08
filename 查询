@@ -9,4 +9,4 @@ for i in range(count):
     time = nowTime
     List = [name,number,time]
 if name in List:
-    print(List[0])
+    print(list)
