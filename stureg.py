@@ -1,6 +1,6 @@
 from tkinter import *
 root = Tk()
-root.title('我的第一个Python窗体')
+root.title('学生登陆')
 Label1 = Label(root, text='姓名:').grid(row=0, column=0)
 Label2 = Label(root, text='学号:').grid(row=1, column=0)
 
