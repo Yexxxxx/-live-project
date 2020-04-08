@@ -4,7 +4,6 @@ import stureg
 import datetime
 import tkinter.messagebox
 students = stureg.get_value()
-print(students)
 def find():
     root = Tk()
     root.title('学生登陆')
