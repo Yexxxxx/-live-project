@@ -2,6 +2,7 @@ from tkinter import *
 import sys
 sys.path.append('E:\Github\-live-project')
 import stureg
+import out
 def newwind():
     winNew = Toplevel(root)
     winNew.geometry('360x360')
@@ -15,10 +16,12 @@ root.title('学生进出登记界面')
 root.geometry('360x360')
 lb1 = Label(root,text='学生进出登记', font=('宋体',16, 'bold'))
 lb1.place(relx=0.2, rely=0.2)
-Button(root, text='登记', width=10, command = stureg.into) \
+Button(root, text='入校登记', width=10, command = stureg.into) \
     .grid(row=2, column=0, sticky=W, padx=10, pady=5)
-Button(root, text='查询', width=10) \
+Button(root, text='显示所有', width=10,command = stureg.look) \
     .grid(row=2, column=1, sticky=E, padx=10, pady=5)
+Button(root, text='离校登记', width=10,command = out.find) \
+    .grid(row=2, column=2, sticky=E, padx=10, pady=5)
 mainmenu = Menu(root)
 menuFile = Menu(mainmenu)
 mainmenu.add_cascade(label='菜单', menu=menuFile)

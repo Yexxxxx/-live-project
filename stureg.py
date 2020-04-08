@@ -1,7 +1,7 @@
 from tkinter import *
+from operator import itemgetter
+import datetime
 students = []
-
-
 def into():
     root = Tk()
     root.title('学生登陆')
@@ -18,10 +18,23 @@ def into():
         .grid(row=2, column=0, sticky=W, padx=10, pady=5)
     mainloop()
 def show(e1,e2):
-    student=[e1,e2]
-    students.extend(student)
-    print("学生姓名:%s" % e1)  # 获取用户输入的信息
-    print("学生学号:%s" % e2)
-    print(students)
+    nowTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    outTime = 0000
+    student=[e1,e2,nowTime,outTime]
+    students.append(student)
+def look():
+    root = Tk()
+    root.title('学生信息')
+    text = Text(root, width=400, height=400)
+    text.pack(fill=X, side=BOTTOM)
+    text.insert(END,students)  # INSERT表示在光标位置插入
+    text.see(END)
+    text.update()
+    print("名字               学号               进入时间                离开时间")
+    student = sorted(students, key=itemgetter(1))
+    for x in student:
+        print(x)
 
+def get_value():
+    return students
 
