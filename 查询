@@ -1,0 +1,12 @@
+import datetime
+nowTime=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+time = nowTime
+List=['a',1,'b',2,'c',3]
+count=1
+for i in range(count):
+    name = input('请输入学生的姓名:')
+    number = input('请输入学生的学号:')
+    time = nowTime
+    List = [name,number,time]
+if name in List:
+    print(List[0])
