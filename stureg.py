@@ -1,4 +1,7 @@
 from tkinter import *
+students = []
+
+
 def into():
     root = Tk()
     root.title('学生登陆')
@@ -11,18 +14,14 @@ def into():
     e2 = Entry(root, textvariable=p1)
     e1.grid(row=0, column=1, padx=10, pady=5)  # 设置输入框显示的位置，以及长和宽属性
     e2.grid(row=1, column=1, padx=10, pady=5)
-    Button(root, text='登入', width=10, command=show) \
+    Button(root, text='登入', width=10, command= lambda: show(e1.get(), e2.get())) \
         .grid(row=2, column=0, sticky=W, padx=10, pady=5)
-
-    Button(root, text='退出', width=10, command=root.quit) \
-        .grid(row=2, column=1, sticky=E, padx=10, pady=5)
-
     mainloop()
-
-
-def show():
-    print("学生姓名:%s" % e1.get())  # 获取用户输入的信息
-    print("学生学号:%s" % e2.get())
-
+def show(e1,e2):
+    student=[e1,e2]
+    students.extend(student)
+    print("学生姓名:%s" % e1)  # 获取用户输入的信息
+    print("学生学号:%s" % e2)
+    print(students)
 
 
