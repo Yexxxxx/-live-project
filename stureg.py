@@ -15,12 +15,14 @@ e2.grid(row=1, column=1, padx=10, pady=5)
 def show():
     print("学生姓名:%s" % e1.get())  # 获取用户输入的信息
     print("学生学号:%s" % e2.get())
-
-
+        
+def shut():
+    print("确认登出：%s" % e2.get())
 Button(root, text='登入', width=10, command=show) \
     .grid(row=2, column=0, sticky=W, padx=10, pady=5)
 
 Button(root, text='退出', width=10, command=root.quit) \
     .grid(row=2, column=1, sticky=E, padx=10, pady=5)
-
+Button(root, text='登出', width=10, command=shut) \
+    .grid(row=2, column=2, sticky=E, padx=10, pady=5)
 mainloop()
