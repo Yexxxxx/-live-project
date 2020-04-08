@@ -1,0 +1,8 @@
+def find():
+        xuehao=input("")
+        for i in range(len(s)):
+                mid=s[1]
+                mid_no=mid[1]
+                if(xuehao==mid_no):
+                        print(mid)
+                        break
