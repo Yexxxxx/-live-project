@@ -1,11 +1,14 @@
+a = int(input("请输入学生人数："))
+num_list = []
+name_list = []
+d = {}
+for i in range(a):
+    num = input("学号为：")
+    name = input("姓名为：")
+    print("\n")
+    num_list.append(num)
+    name_list.append(name)
 
-s=[['chen', '2117065010', '2020'],['weibo', '211706509', '2020']]
-left = s[0]
-left_no = left[1]
-right = s[0]
-right_no = right[1]
-student=[]
-if left_no >right_no:
-        stu_list = [right,left]
-        s.append(stu_list)
-print(student)
+d = dict(zip(num_list, name_list))
+new_d = dict(sorted(d.items(), key=lambda x: x[0]))
+print(new_d)
