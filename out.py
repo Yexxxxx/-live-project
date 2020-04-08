@@ -2,6 +2,7 @@ from tkinter import *
 from operator import itemgetter
 import stureg
 import datetime
+import tkinter.messagebox
 students = stureg.get_value()
 print(students)
 def find():
@@ -21,8 +22,12 @@ def result(e2):
         mid = students[i]
         mid_no = mid[1]
         if (num == mid_no):
+            if (mid[3] != "未离开"):
+                tkinter.messagebox.showinfo('提示', '请先入校登记')
+                break
             outTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             mid[3] = outTime
+            tkinter.messagebox.showinfo('提示', '离校成功，数据更新')
             break
         else:
-            print("查无此人")
+            tkinter.messagebox.showinfo('提示','查无此人')
